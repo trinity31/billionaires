@@ -19,6 +19,7 @@ export default async function Home() {
       <div className={styles.grid}>
         {billionaires.map((billionaire) => (
           <Link
+            prefetch
             href={`/person/${billionaire.id}`}
             key={billionaire.id}
             className={styles.card}
