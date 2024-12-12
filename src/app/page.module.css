@@ -28,10 +28,11 @@
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #1a1f25;
+  min-height: 100vh;
 }
 
 .main ol {
@@ -165,4 +166,53 @@ a.secondary {
   .logo {
     filter: invert();
   }
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white;
+  font-size: 2.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 1rem;
+  background-color: #1e2837;
+}
+
+.cardContent h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.cardInfo {
+  color: #cbd5e0;
+  font-size: 0.9rem;
 }
