@@ -2,6 +2,14 @@ import { Billionaire } from "@/types/billionaire";
 import styles from "./page.module.css";
 import Link from "next/link";
 
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
+    const billionaire = await getBillionaire(id);
+  return {
+    title: `${billionaire.name}`,
+  };
+}
+
 async function getBillionaire(id: string): Promise<Billionaire> {
   const response = await fetch(
     `https://billions-api.nomadcoders.workers.dev/person/${id}`,

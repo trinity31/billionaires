@@ -2,6 +2,10 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import { Billionaire } from "@/types/billionaire";
 
+export const metadata = {
+  title: "세계 억만장자 목록",
+};
+
 async function getBillionaires(): Promise<Billionaire[]> {
   const response = await fetch(
     "https://billions-api.nomadcoders.workers.dev/",
