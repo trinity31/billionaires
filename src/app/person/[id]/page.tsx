@@ -11,10 +11,11 @@ async function getBillionaire(id: string): Promise<Billionaire> {
 }
 
 export default async function PersonDetail({
-  params: { id },
+    params,
 }: {
-  params: { id: string };
-}) {
+    params: Promise<{ id: string }>
+  }) {
+  const { id } = await params;
   const billionaire = await getBillionaire(id);
 
   return (
@@ -72,4 +73,4 @@ export default async function PersonDetail({
       </div>
     </div>
   );
-} 
+}
